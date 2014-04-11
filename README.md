@@ -1,4 +1,4 @@
 expression-engine-htaccess
 ==========================
 
-A .htaccess file for use in Expression Engine installations. Clean URL and www. redirection.
+A .htaccess file for use in Expression Engine installations. Clean URL and www. redirection and image expiry caching.
