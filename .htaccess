@@ -1,0 +1,26 @@
+# BEGIN ExpressionEngine Rewrite
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  
+  # Redirect domain.com to www.domain.com relativly
+  RewriteCond %{HTTP_HOST} !^www\.
+  RewriteRule ^(.*)$ http://www.%{HTTP_HOST}/$1 [R=301,L]
+  
+  # Custom URL's to index.php
+  RewriteBase /
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond $1 !\.(gif|jpe?g|png)$ [NC]
+  RewriteRule ^(.*)$ /index.php?$1 [L]
+</IfModule>
+
+<IfModule mod_expires.c>
+  # Expiry date for better caching
+  ExpiresActive On
+  ExpiresByType image/jpg "access 1 year"
+  ExpiresByType image/jpeg "access 1 year"
+  ExpiresByType image/gif "access 1 year"
+  ExpiresByType image/png "access 1 year"
+</IfModule>
+
+# END ExpressionEngine Rewrite
