@@ -3,6 +3,6 @@
 
 A versatile .htaccess file for use in Expression Engine installations.
 
--- Clean URLs
--- www. redirection
--- image expiry caching
+- Clean URLs
+- non-www to www redirection
+- image expiry caching
